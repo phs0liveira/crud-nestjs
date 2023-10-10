@@ -20,7 +20,10 @@ export class TypeActivity {
   @IsNumber()
   limiteHoras: number;
 
-  @ManyToOne(() => Dimension, (dimension) => dimension.type)
+  @ManyToOne(() => Dimension, (dimension) => dimension.type, { eager: true })
   @JoinColumn({ name: 'dimensionId' })
   dimension: Dimension;
+
+  @Column()
+  dimensionId: number;
 }

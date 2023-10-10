@@ -7,8 +7,8 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { DimensionService } from './dimension.service';
-import { CreateDimensionDto } from './dto/create-dimension.dto';
+import { DimensionService } from '../service/dimension.service';
+import { CreateDimensionDto } from '../dto/create-dimension.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Dimension')

@@ -7,8 +7,8 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { TypeActivityService } from './type-activity.service';
-import { CreateTypeActivityDto } from './dto/create-type-activity.dto';
+import { TypeActivityService } from '../service/type-activity.service';
+import { CreateTypeActivityDto } from '../dto/create-type-activity.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Type-activity')

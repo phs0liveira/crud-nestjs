@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTypeActivityDto } from './dto/create-type-activity.dto';
-import { TypeActivity } from './entities/type-activity.entity';
+import { CreateTypeActivityDto } from '../dto/create-type-activity.dto';
+import { TypeActivity } from '../entities/type-activity.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

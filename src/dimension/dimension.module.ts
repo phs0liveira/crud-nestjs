@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { DimensionService } from './dimension.service';
-import { DimensionController } from './dimension.controller';
+import { DimensionService } from './service/dimension.service';
+import { DimensionController } from './controller/dimension.controller';
 import { Dimension } from './entities/dimension.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 

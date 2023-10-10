@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { TypeActivityService } from './type-activity.service';
-import { TypeActivityController } from './type-activity.controller';
+import { TypeActivityService } from './service/type-activity.service';
+import { TypeActivityController } from './controller/type-activity.controller';
 import { TypeActivity } from './entities/type-activity.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
