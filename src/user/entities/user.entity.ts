@@ -1,57 +1,32 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { Curso, Turno } from '../../enums/role.enum';
-import { IsNotEmpty } from 'class-validator';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ length: 50 })
-  @IsNotEmpty()
+  @Column()
   nome: string;
 
-  @Column({
-    nullable: false,
-    transformer: {
-      from: (value: string) => value.replace(/\D/g, ''),
-      to: (value: string) => value,
-    },
-  })
-  @IsNotEmpty()
+  @Column()
   matricula: string;
 
   @Column({ enum: Curso })
-  @IsNotEmpty()
   curso: string;
 
   @Column({ enum: Turno })
-  @IsNotEmpty()
   turno: string;
 
-  @Column({
-    nullable: false,
-    transformer: {
-      from: (value: string) => value.replace(/\D/g, ''),
-      to: (value: string) => value,
-    },
-  })
-  @IsNotEmpty()
+  @Column()
   cpf: string;
 
   @Column()
   email: string;
 
-  @Column({
-    nullable: false,
-    transformer: {
-      from: (value: string) => value.replace(/\D/g, ''),
-      to: (value: string) => value,
-    },
-  })
-  @IsNotEmpty()
+  @Column()
   telefone: string;
 
-  @Column({ length: 200 })
+  @Column()
   endereco: string;
 }

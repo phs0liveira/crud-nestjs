@@ -1,24 +1,26 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
 import {
   IsEmail,
   IsEnum,
   IsNotEmpty,
   IsOptional,
   IsString,
-  MinLength,
+  Length,
 } from 'class-validator';
 import { Curso, Turno } from 'src/enums/role.enum';
 
 export class CreateUserDto {
   @ApiProperty()
   @IsString()
-  @MinLength(3)
+  @Length(3, 50)
   @IsNotEmpty()
   nome: string;
 
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
+  @Transform(({ value }) => value.replace(/\D/g, ''))
   matricula: string;
 
   @ApiProperty()
@@ -36,6 +38,7 @@ export class CreateUserDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
+  @Transform(({ value }) => value.replace(/\D/g, ''))
   cpf: string;
 
   @ApiProperty()
@@ -45,11 +48,12 @@ export class CreateUserDto {
   @ApiProperty()
   @IsString()
   @IsOptional()
-  telefone: string;
+  @Transform(({ value }) => value.replace(/\D/g, ''))
+  telefone?: string;
 
   @ApiProperty()
   @IsString()
-  @MinLength(6)
+  @Length(6, 200)
   @IsOptional()
-  endereco: string;
+  endereco?: string;
 }

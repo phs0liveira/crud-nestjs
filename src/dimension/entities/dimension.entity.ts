@@ -7,7 +7,7 @@ export class Dimension {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 50 })
+  @Column()
   nome: string;
 
   @Column('int')
